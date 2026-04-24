@@ -41,7 +41,7 @@ export default function ConnectFooter() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px" }}
         >
           <GlassCard className="p-8 text-center">
             <h2
@@ -74,14 +74,14 @@ export default function ConnectFooter() {
                     href={link.href}
                     target={link.name !== "Email" ? "_blank" : undefined}
                     rel={link.name !== "Email" ? "noopener noreferrer" : undefined}
-                    className={`group relative flex items-center gap-3 overflow-hidden rounded-full border px-6 py-3 font-sans text-sm backdrop-blur-sm transition-all duration-300 ${isDark
+                    className={`group relative flex items-center gap-3 overflow-hidden rounded-full border px-6 py-3 font-sans text-sm backdrop-blur-sm transform-gpu transition-all duration-300 ${isDark
                       ? "border-white/20 bg-white/5 text-white/80 hover:border-white/40 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]"
                       : "border-black/20 bg-black/5 text-black/80 hover:border-black/40 hover:bg-black/10 hover:shadow-[0_0_20px_rgba(0,0,0,0.5)]"
                       }`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "0px" }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                   >

@@ -10,7 +10,7 @@ const education = [
     degree: "Bachelor of Science Honours in Computer Science",
     institution: "Informatics Institute of Technology (IIT)",
     affiliation: "Affiliated with University of Westminster",
-    period: "Sep 2021 – Present",
+    period: "Sep 2021 – Sep 2025",
     achievement: null,
   },
   {
@@ -39,7 +39,7 @@ export default function EducationSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px" }}
           className="mb-16 text-center"
         >
           <h2
@@ -63,7 +63,7 @@ export default function EducationSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px" }}
             >
               <GlassCard className="group p-6">
                 <div

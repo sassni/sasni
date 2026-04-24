@@ -25,7 +25,7 @@ export default function GlassCard({ children, className, hoverEffect = true }: G
   return (
     <motion.div
       className={cn(
-        "relative overflow-hidden rounded-2xl backdrop-blur-xl transition-colors duration-500",
+        "relative overflow-hidden rounded-2xl backdrop-blur-xl transition-colors duration-500 transform-gpu will-change-transform",
         isDark ? "border border-white/10 bg-white/5" : "border border-black/10 bg-black/5",
         "before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:opacity-0 before:transition-opacity before:duration-500",
         isDark

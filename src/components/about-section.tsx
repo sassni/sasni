@@ -23,7 +23,7 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px" }}
           className="mb-12 text-center"
         >
           <h2
@@ -44,14 +44,14 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px" }}
         >
           <GlassCard className="p-6 text-center">
             <p
               className={`font-sans text-lg leading-relaxed transition-colors duration-500 ${isDark ? "text-white/70" : "text-black/70"
                 }`}
             >
-              I'm a passionate Full Stack Software Engineer experienced in building scalable web apps and AI-driven systems. I blend creative design, robust backend logic, and AI innovations to solve real-world problems through clean code, optimization, and user-focused design.
+              Full-stack Software Engineer building secure, AI-driven platforms. Expert in delivering scalable, end-to-end solutions and automating enterprise workflows using React, Python, AWS, and advanced LLMs.
             </p>
 
           </GlassCard>

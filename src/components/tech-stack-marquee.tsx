@@ -18,6 +18,8 @@ const technologies = [
   { name: "MySQL", color: "#4479A1" },
   { name: "PostgreSQL", color: "#4169E1" }, // Elephant blue
   { name: "MongoDB", color: "#47A248" },
+  { name: "Supabase", color: "#3ECF8E" },
+  { name: "AWS", color: "#FF9900" },
   { name: "TensorFlow", color: "#FF6F00" },
   { name: "PyTorch", color: "#EE4C2C" },
   { name: "Scikit-learn", color: "#F7931E" },
@@ -27,6 +29,9 @@ const technologies = [
   { name: "Git", color: "#F05032" },
   { name: "Google Cloud", color: "#4285F4" },
   { name: "Figma", color: "#F24E1E" },
+  { name: "n8n", color: "#FF6D5A" },
+  { name: "Airtable", color: "#18BFFF" },
+  { name: "WordPress", color: "#21759B" },
 ]
 
 function TechIcon({ name, color, isDark }: { name: string; color: string; isDark: boolean }) {
@@ -42,7 +47,7 @@ function TechIcon({ name, color, isDark }: { name: string; color: string; isDark
 
   return (
     <div
-      className={`mx-3 flex items-center gap-2 rounded-full border px-5 py-2.5 backdrop-blur-sm transition-colors duration-500 ${isDark ? "border-white/20 bg-white/5" : "border-black/20 bg-black/5"
+      className={`mx-3 flex items-center gap-2 rounded-full border px-5 py-2.5 backdrop-blur-sm transform-gpu transition-colors duration-500 ${isDark ? "border-white/20 bg-white/5" : "border-black/20 bg-black/5"
         }`}
     >
       <span className="font-mono text-sm font-bold" style={{ color: contentColor }}>{name}</span>
@@ -60,13 +65,13 @@ export default function TechStackMarquee() {
 
   const isDark = mounted && resolvedTheme === "dark"
 
-  const firstRow = technologies.slice(0, 11)
-  const secondRow = technologies.slice(11)
+  const firstRow = technologies.slice(0, 14)
+  const secondRow = technologies.slice(14)
 
   return (
     <section className="relative overflow-hidden py-16">
       <div
-        className={`pointer-events-none absolute inset-0 z-10 transition-colors duration-500 ${isDark
+        className={`pointer-events-none absolute z-10 transition-colors duration-500 ${isDark
           ? "bg-gradient-to-r from-black via-transparent to-black"
           : "bg-gradient-to-r from-white via-transparent to-white"
           }`}
@@ -76,7 +81,7 @@ export default function TechStackMarquee() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px" }}
         className="mb-8 text-center"
       >
         <h2

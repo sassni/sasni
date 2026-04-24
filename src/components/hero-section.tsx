@@ -44,11 +44,11 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-12 flex flex-wrap justify-center gap-4"
         >
-          <div className={`flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium backdrop-blur-md ${isDark ? "border-white/10 bg-white/5" : "border-black/10 bg-black/5"}`}>
+          <div className={`flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium backdrop-blur-md transform-gpu ${isDark ? "border-white/10 bg-white/5" : "border-black/10 bg-black/5"}`}>
             <Mail className="h-3 w-3" />
             <span>shazni121@gmail.com</span>
           </div>
-          <div className={`flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium backdrop-blur-md ${isDark ? "border-white/10 bg-white/5" : "border-black/10 bg-black/5"}`}>
+          <div className={`flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium backdrop-blur-md transform-gpu ${isDark ? "border-white/10 bg-white/5" : "border-black/10 bg-black/5"}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -65,7 +65,7 @@ export default function HeroSection() {
             </svg>
             <span>+94 71 334 4861</span>
           </div>
-          <div className={`flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium backdrop-blur-md ${isDark ? "border-white/10 bg-white/5" : "border-black/10 bg-black/5"}`}>
+          <div className={`flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium backdrop-blur-md transform-gpu ${isDark ? "border-white/10 bg-white/5" : "border-black/10 bg-black/5"}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -95,7 +95,7 @@ export default function HeroSection() {
             href="/sasni-resume.pdf"
             download
             className={`
-              group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-8 py-4 font-sans text-sm font-medium backdrop-blur-xl transition-all duration-300
+              group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-8 py-4 font-sans text-sm font-medium backdrop-blur-xl transform-gpu will-change-transform transition-all duration-300
               ${isDark
                 ? "border border-white/20 bg-white/10 text-white hover:border-white/40 hover:bg-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]"
                 : "border border-black/20 bg-black/10 text-black hover:border-black/40 hover:bg-black/20 hover:shadow-[0_0_20px_rgba(0,0,0,0.5)]"
@@ -111,7 +111,7 @@ export default function HeroSection() {
           <motion.a
             href="mailto:shazni121@gmail.com"
             className={`
-              group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-8 py-4 font-sans text-sm font-medium backdrop-blur-xl transition-all duration-300
+              group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-8 py-4 font-sans text-sm font-medium backdrop-blur-xl transform-gpu will-change-transform transition-all duration-300
               ${isDark
                 ? "border border-white/30 bg-white/5 text-white/80 hover:border-white/50 hover:bg-white/10 hover:text-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]"
                 : "border border-black/30 bg-black/5 text-black/80 hover:border-black/50 hover:bg-black/10 hover:text-black hover:shadow-[0_0_20px_rgba(0,0,0,0.5)]"

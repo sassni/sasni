@@ -7,17 +7,33 @@ import GlassCard from "./glass-card"
 
 const experiences = [
   {
+    title: "Associate Software Engineer (Full Stack)",
+    company: "NukyLabs LLC",
+    period: "Sep 2025 – Present",
+    description: "Developed scalable full-stack applications and AI-powered platforms, including secure messaging and travel planning systems.",
+    details: [
+      "Built scalable full-stack applications using React, Next.js, and Python backends deployed on AWS",
+      "Developed secure user authentication systems and implemented robust data encryption for privacy compliance",
+      "Integrated advanced AI models to power core features like interactive avatars and automated itinerary generation",
+      "Built automated n8n content workflows and Python CLI scripts for Airtable optimization",
+      "Managed secure corporate WordPress deployments on AWS",
+    ],
+    skills: ["React", "Next.js", "TypeScript", "Python", "Fast API", "Supabase", "PostgreSQL", "AWS"],
+  },
+  {
     title: "Full Stack Software Engineer - Intern",
     company: "Synapse AI Labs",
     period: "Oct 2023 – Oct 2024",
     description:
-      "Engaged as a Full Stack Software Engineer Intern, contributing to end-to-end development tasks, debugging, testing, feature implementation, and optimization across web-based platforms.",
+      "Engineered full-stack components for sentiment analysis tools and redesigned corporate web platforms.",
     details: [
-      "Contributed to end-to-end development, debugging, testing, and feature implementation across web platforms",
-      "Collaborated with cross-functional teams to enhance product features and improve system performance",
-      "Ensured seamless user experiences through iterative development and regular code reviews",
+      "Engineered full-stack components for Kommon Poll, resolving critical application bugs",
+      "Improved AI keyword tracking accuracy and enhanced platform UI responsiveness",
+      "Led the complete UI/UX redesign of the corporate website for mobile responsiveness",
+      "Integrated custom WordPress plugins to support new business service architectures",
+      "Optimized end-to-end system performance across multiple web-based platforms",
     ],
-    skills: ["React", "Node.js", "Python", "WordPress", "PHP"],
+    skills: ["JavaScript", "PHP", "WordPress", "HTML", "CSS"],
   },
 ]
 
@@ -38,7 +54,7 @@ export default function ExperienceTimeline() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px" }}
           className="mb-16 text-center"
         >
           <h2
@@ -72,7 +88,7 @@ export default function ExperienceTimeline() {
               initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px" }}
               className="relative mb-12 pl-20 md:pl-0 md:odd:pr-[calc(50%+2rem)] md:even:pl-[calc(50%+2rem)]"
             >
               <motion.div
@@ -81,7 +97,7 @@ export default function ExperienceTimeline() {
                 }`}
                 whileInView={{ scale: [0, 1.2, 1] }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px" }}
               >
                 <div
                   className={`absolute inset-0 animate-ping rounded-full transition-colors duration-500 ${

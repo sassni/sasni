@@ -63,7 +63,7 @@ function DockIcon({
     // Check if device supports hover (desktop) vs touch
     const checkHover = () => setSupportsHover(window.matchMedia("(hover: hover)").matches)
     checkHover()
-    window.addEventListener("resize", checkHover)
+    window.addEventListener("resize", checkHover, { passive: true })
     return () => window.removeEventListener("resize", checkHover)
   }, [])
 
@@ -130,7 +130,7 @@ export default function NavigationDock() {
             ? "border border-white/10 bg-black/5 shadow-lg shadow-black/20"
             : "border border-black/10 bg-white/30 shadow-lg shadow-black/5"
           }
-          backdrop-blur-xl
+          backdrop-blur-xl transform-gpu will-change-transform
         `}
       >
         {/* Navigation Items */}

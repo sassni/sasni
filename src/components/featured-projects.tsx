@@ -7,19 +7,25 @@ import GlassCard from "./glass-card"
 
 const projects = [
   {
-    title: "Personalized AI Nutrition System",
+    title: "Nutrix",
     description:
-      "Full-stack AI application delivering personalized nutrition plans based on user health data. Built ML models with TensorFlow/PyTorch for real-time dietary recommendations.",
-    tags: ["Python", "Flask", "TensorFlow", "JavaScript"],
+      "Engineered an AI platform isolating math computation to eliminate LLM 'hallucinations', integrating a custom TensorFlow/Keras model and Gemini 2.5 Flash API for personalized coaching.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Python", "TensorFlow", "Google API"],
   },
   {
-    title: "Hotel Guest Management",
+    title: "MessageFuture",
     description:
-      "Full-stack hotel guest management system to manage guest records and bookings. Integrated PocketBase for real-time data handling and CRUD operations.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "PocketBase"],
+      "A secure emotional-messaging platform for scheduling encrypted messages and AI interactions, featuring robust data encryption for privacy compliance.",
+    tags: ["React", "Next.js", "Python", "AWS", "Supabase", "AI"],
   },
   {
-    title: "MCP Resume Server & Playground",
+    title: "TravelMatelia",
+    description:
+      "An AI-powered travel planning platform featuring social trip pooling and automated itinerary generation, deployed on AWS.",
+    tags: ["React", "Next.js", "PostgreSQL", "Supabase", "AWS"],
+  },
+  {
+    title: "MCP Resume Server",
     description:
       "Resume parsing and Q&A system with WebSocket JSON-RPC and REST API fallback. Developed a Next.js playground and SMTP email integration.",
     tags: ["Next.js", "Node.js", "Express.js", "WebSocket"],
@@ -27,26 +33,26 @@ const projects = [
   {
     title: "Kommon Poll",
     description:
-      "AI-powered sentiment analysis tool. Contributed new features, bug fixes, and maintained frontend/backend components. Improved keyword tracking accuracy and UI responsiveness.",
+      "An AI-powered sentiment analysis tool designed for precise keyword tracking and user sentiment evaluation.",
     tags: ["JavaScript", "PHP", "AI"],
   },
   {
-    title: "Synapse AI Labs Website",
+    title: "Hotel Guest Management",
     description:
-      "Redesigned and maintained company website, enhancing UI/UX, adding new sections, ensuring responsiveness, and integrating plugins.",
-    tags: ["WordPress", "PHP", "CSS"],
+      "Built a full-stack hotel guest management system to manage guest records and bookings. Integrated PocketBase for real-time data handling.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "PocketBase"],
   },
   {
     title: "Breast Cancer Prediction System",
     description:
-      "Classification and regression models predicting mortality and survival duration using real clinical data with Logistic Regression, KNN, and Naive Bayes.",
+      "Classification and regression models predicting mortality and survival duration using clinical data with Logistic Regression, KNN, and Naive Bayes.",
     tags: ["Python", "Scikit-learn", "Pandas", "NumPy"],
   },
   {
-    title: "Spam Email Classification",
+    title: "Spam Email Classification System",
     description:
-      "Spam detection model using text preprocessing, TF-IDF vectorization, and Multinomial Naive Bayes classifier trained on real-world email data.",
-    tags: ["Python", "Scikit-learn", "NLP"],
+      "Built a spam detection model using text preprocessing, TF-IDF vectorization, and a Multinomial Naive Bayes classifier.",
+    tags: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
   },
 ]
 
@@ -67,7 +73,7 @@ export default function FeaturedProjects() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px" }}
           className="mb-16 text-center"
         >
           <h2
@@ -93,7 +99,7 @@ export default function FeaturedProjects() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px" }}
             >
               <GlassCard className="group h-full p-6">
                 <div
