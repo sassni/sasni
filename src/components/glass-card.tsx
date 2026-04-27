@@ -24,30 +24,34 @@ export default function GlassCard({ children, className, hoverEffect = true }: G
 
   return (
     <motion.div
-      className={cn(
-        "relative overflow-hidden rounded-2xl backdrop-blur-xl transition-colors duration-500 transform-gpu will-change-transform",
-        isDark ? "border border-white/10 bg-white/5" : "border border-black/10 bg-black/5",
-        "before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:opacity-0 before:transition-opacity before:duration-500",
-        isDark
-          ? "before:bg-gradient-to-br before:from-white/10 before:to-transparent"
-          : "before:bg-gradient-to-br before:from-black/5 before:to-transparent",
-        hoverEffect && "hover:before:opacity-100",
-        className,
-      )}
+      className="group/card relative h-full w-full rounded-2xl transform-gpu will-change-transform"
       whileHover={
         hoverEffect
           ? {
               y: -4,
-              boxShadow: isDark
-                ? "0 0 40px rgba(255, 255, 255, 0.08), 0 0 80px rgba(255, 255, 255, 0.04)"
-                : "0 0 40px rgba(0, 0, 0, 0.08), 0 0 80px rgba(0, 0, 0, 0.04)",
-              borderColor: isDark ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.2)",
             }
           : undefined
       }
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      {children}
+      {/* RGB Glow Element */}
+      <div
+        className={cn(
+          "absolute -inset-0.5 rounded-2xl bg-[linear-gradient(to_right,theme(colors.red.500),theme(colors.orange.500),theme(colors.yellow.500),theme(colors.green.500),theme(colors.blue.500),theme(colors.indigo.500),theme(colors.purple.500),theme(colors.red.500))] bg-[length:200%_auto] animate-[gradient_2s_linear_infinite] blur-md opacity-0 transition duration-500",
+          hoverEffect && "group-hover/card:opacity-100",
+        )}
+      />
+
+      {/* Protect the Card Content */}
+      <div
+        className={cn(
+          "relative z-10 h-full w-full overflow-hidden rounded-2xl transition-colors duration-500",
+          isDark ? "bg-zinc-900 border border-white/10" : "bg-gray-100 border border-black/10",
+          className,
+        )}
+      >
+        {children}
+      </div>
     </motion.div>
   )
 }

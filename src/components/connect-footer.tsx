@@ -11,16 +11,19 @@ const socialLinks = [
     name: "LinkedIn",
     href: "http://www.linkedin.com/in/sasni",
     icon: Linkedin,
+    gradient: "from-blue-400 to-blue-600",
   },
   {
     name: "GitHub",
     href: "http://www.github.com/sassni",
     icon: Github,
+    gradient: "from-purple-500 to-purple-700",
   },
   {
     name: "Email",
     href: "mailto:shazni121@gmail.com",
     icon: Mail,
+    gradient: "from-red-500 to-red-600",
   },
 ]
 
@@ -69,15 +72,9 @@ export default function ConnectFooter() {
               {socialLinks.map((link, index) => {
                 const IconComponent = link.icon
                 return (
-                  <motion.a
+                  <motion.div
                     key={link.name}
-                    href={link.href}
-                    target={link.name !== "Email" ? "_blank" : undefined}
-                    rel={link.name !== "Email" ? "noopener noreferrer" : undefined}
-                    className={`group relative flex items-center gap-3 overflow-hidden rounded-full border px-6 py-3 font-sans text-sm backdrop-blur-sm transform-gpu transition-all duration-300 ${isDark
-                      ? "border-white/20 bg-white/5 text-white/80 hover:border-white/40 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]"
-                      : "border-black/20 bg-black/5 text-black/80 hover:border-black/40 hover:bg-black/10 hover:shadow-[0_0_20px_rgba(0,0,0,0.5)]"
-                      }`}
+                    className="group/btn relative inline-block rounded-full"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -85,12 +82,27 @@ export default function ConnectFooter() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <IconComponent
-                      className={`h-5 w-5 transition-colors ${isDark ? "text-white/60 group-hover:text-white" : "text-black/60 group-hover:text-black"
+                    {/* Custom Glow Element */}
+                    <div className={`absolute -inset-0.5 rounded-full bg-gradient-to-r ${link.gradient} blur opacity-0 transition duration-500 group-hover/btn:opacity-100`} />
+                    
+                    <a
+                      href={link.href}
+                      target={link.name !== "Email" ? "_blank" : undefined}
+                      rel={link.name !== "Email" ? "noopener noreferrer" : undefined}
+                      className={`relative z-10 flex items-center gap-3 overflow-hidden rounded-full px-6 py-3 font-sans text-sm transition-colors duration-300 ${
+                        isDark
+                          ? "border border-white/20 bg-zinc-900 text-white/80 hover:text-white"
+                          : "border border-black/20 bg-gray-100 text-black/80 hover:text-black"
+                      }`}
+                    >
+                      <IconComponent
+                        className={`h-5 w-5 transition-colors ${
+                          isDark ? "text-white/60 group-hover/btn:text-white" : "text-black/60 group-hover/btn:text-black"
                         }`}
-                    />
-                    <span>{link.name}</span>
-                  </motion.a>
+                      />
+                      <span>{link.name}</span>
+                    </a>
+                  </motion.div>
                 )
               })}
             </div>

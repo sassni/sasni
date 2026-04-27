@@ -91,38 +91,44 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
-          <motion.a
-            href="/sasni-resume.pdf"
-            download
-            className={`
-              group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-8 py-4 font-sans text-sm font-medium backdrop-blur-xl transform-gpu will-change-transform transition-all duration-300
-              ${isDark
-                ? "border border-white/20 bg-white/10 text-white hover:border-white/40 hover:bg-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]"
-                : "border border-black/20 bg-black/10 text-black hover:border-black/40 hover:bg-black/20 hover:shadow-[0_0_20px_rgba(0,0,0,0.5)]"
-              }
-            `}
+          <motion.div
+            className="group relative inline-block rounded-full"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Download className="relative z-10 h-4 w-4" />
-            <span className="relative z-10">Resume</span>
-          </motion.a>
+            {/* Custom Glow Element */}
+            <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-sky-400 to-cyan-500 blur opacity-0 transition duration-500 group-hover:opacity-100" />
+            
+            <a
+              href="/sasni-resume.pdf"
+              download
+              className={`relative z-10 flex items-center gap-2 overflow-hidden rounded-full px-8 py-4 font-sans text-sm font-medium transition-colors duration-300 ${
+                isDark ? "border border-white/20 bg-zinc-900 text-white" : "border border-black/20 bg-gray-100 text-black"
+              }`}
+            >
+              <Download className="h-4 w-4" />
+              <span>Resume</span>
+            </a>
+          </motion.div>
 
-          <motion.a
-            href="mailto:shazni121@gmail.com"
-            className={`
-              group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-8 py-4 font-sans text-sm font-medium backdrop-blur-xl transform-gpu will-change-transform transition-all duration-300
-              ${isDark
-                ? "border border-white/30 bg-white/5 text-white/80 hover:border-white/50 hover:bg-white/10 hover:text-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]"
-                : "border border-black/30 bg-black/5 text-black/80 hover:border-black/50 hover:bg-black/10 hover:text-black hover:shadow-[0_0_20px_rgba(0,0,0,0.5)]"
-              }
-            `}
+          <motion.div
+            className="group relative inline-block rounded-full"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Mail className="relative z-10 h-4 w-4" />
-            <span className="relative z-10">Get In Touch</span>
-          </motion.a>
+            {/* Custom Glow Element */}
+            <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-red-500 to-rose-600 blur opacity-0 transition duration-500 group-hover:opacity-100" />
+            
+            <a
+              href="mailto:shazni121@gmail.com"
+              className={`relative z-10 flex items-center gap-2 overflow-hidden rounded-full px-8 py-4 font-sans text-sm font-medium transition-colors duration-300 ${
+                isDark ? "border border-white/20 bg-zinc-900 text-white/80 hover:text-white" : "border border-black/20 bg-gray-100 text-black/80 hover:text-black"
+              }`}
+            >
+              <Mail className="h-4 w-4" />
+              <span>Get In Touch</span>
+            </a>
+          </motion.div>
         </motion.div>
       </motion.div>
 
